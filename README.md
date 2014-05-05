@@ -8,4 +8,5 @@ Features:
   * item
   * collection
   * paged collection
-  * dereferenceable uri
+  * Linkes Factor: dereferenceable uri
+  * Control data
