@@ -5,9 +5,9 @@ a hypermedia api framework
 
 Features: 
 
-  * Item
-  * Collection
-  * Paged collection
   * Generic domain style
+    * Item
+    * Collection
+  * Paged collection
   * Linkes Factor: dereferenceable uri
   * Control data
