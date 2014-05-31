@@ -9,6 +9,6 @@ Features:
     * Item
     * Collection
     * Paged collection
-  * Linkes Factor: dereferenceable uri
+  * Linkes factor: dereferenceable uri
   * Context(schema) to UI render template
   * OAuth2 (Password, Authorization code flow), support client specifed scope
