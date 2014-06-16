@@ -1,0 +1,52 @@
+ {
+   "ERR_OK": {
+     "status": 0,
+     "title": "",
+     "message": ""
+   },
+   "ERR_GENERAL": {
+     "status": 1,
+     "title": "",
+     "message": ""
+   },
+   "ERR_NOT_FOUND": {
+     "status": 2,
+     "title": "",
+     "message": ""
+   },
+   "ERR_SET_FAILED": {
+     "status": 3,
+     "title": "",
+     "message": ""
+   },
+   "ERR_INCORRECT_PASSWORD": {
+     "status": 4,
+     "title": "",
+     "message": ""
+   },
+   "ERR_USER_EXISTS": {
+     "status": 5,
+     "title": "",
+     "message": ""
+   },
+   "ERR_MISSING_FIELD": {
+     "status": 6,
+     "title": "",
+     "message": ""
+   },
+   "ERR_NON_NUMERIC_PASSED_TO_NUMERIC_FIELD": {
+     "status": 7,
+     "title": "",
+     "message": ""
+   },
+   "ERR_CONNECTION": {
+     "status": 8,
+     "title": "",
+     "message": ""
+   },
+   "ERR_UPLOAD_FAILED": {
+     "status": 9,
+     "title": "",
+     "message": ""
+   }
+ }

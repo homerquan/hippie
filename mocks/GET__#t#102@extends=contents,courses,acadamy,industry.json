@@ -1,0 +1,31 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/102",
+        "name": "Statistics",
+        "contents": [{
+            "name": "Data Collection/Synthesis",
+            "href": ""
+        }, {
+            "name": "Data Analyses",
+            "href": ""
+        }, {
+            "name": "Data visualization",
+            "href": ""
+        }],
+        "courses": [{
+            "name": "Statistics 101",
+            "href": "",
+            "source": "Udacity"
+        }, {
+            "name": "Introduction to Applied Statistics",
+            "href": "",
+            "source": "iTunes U"
+        }, {
+            "name": "Statistical Reasoning",
+            "href": "",
+            "source": "youtube"
+        }],
+        "graph": "t/102/graph"
+    }
+}

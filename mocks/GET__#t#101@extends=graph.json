@@ -1,0 +1,36 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/101",
+        "name": "Java",
+        "projects": "t/101/projects",
+        "courses": "t/101/courses",
+        "graph": {
+            "nodes": {
+                "t/101": {
+                    "label": "Critical thinking",
+                    "selected": true
+                },
+                "t/102": {
+                    "label": "Statistics"
+                },
+                "t/103": {
+                    "label": "Micro ecnomony"
+                },
+                "t/104": {
+                    "label": "Marketing"
+                }
+            },
+            "edges": {
+                "t/101": {
+                    "t/102": {},
+                    "t/103": {},
+                    "t/104": {}
+                },
+                "t/103": {
+                    "t/104": {}
+                }
+            }
+        }
+    }
+}

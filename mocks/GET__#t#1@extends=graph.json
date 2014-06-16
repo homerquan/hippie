@@ -1,0 +1,36 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/1",
+        "name": "Java",
+        "projects": "t/1/projects",
+        "courses": "t/1/courses",
+        "graph": {
+            "nodes": {
+                "t/1": {
+                    "label": "Java",
+                    "selected": true
+                },
+                "t/2": {
+                    "label": "Algorithm"
+                },
+                "t/3": {
+                    "label": "Object-oriented programming"
+                },
+                "t/4": {
+                    "label": "Distributed system"
+                }
+            },
+            "edges": {
+                "t/1": {
+                    "t/2": {},
+                    "t/3": {},
+                    "t/4": {}
+                },
+                "t/3": {
+                    "t/4": {}
+                }
+            }
+        }
+    }
+}

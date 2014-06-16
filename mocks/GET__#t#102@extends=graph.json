@@ -1,0 +1,36 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/102",
+        "name": "Statistics",
+        "projects": "t/102/projects",
+        "courses": "t/102/courses",
+        "graph": {
+            "nodes": {
+                "t/102": {
+                    "label": "Statistics",
+                    "selected": true
+                },
+                "t/101": {
+                    "label": "Critical thinking"
+                },
+                "t/105": {
+                    "label": "Survey methodology"
+                },
+                "t/106": {
+                    "label": "Probability distributions"
+                }
+            },
+            "edges": {
+                "t/102": {
+                    "t/101": {},
+                    "t/105": {},
+                    "t/106": {}
+                },
+                "t/105": {
+                    "t/106": {}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/101",
+        "name": "Critical thinking",
+        "contents": [{
+            "name": "Thinking Critically about Ordinary Language",
+            "href": ""
+        }, {
+            "name": "Evaluating Web Pages",
+            "href": ""
+        }, {
+            "name": "How to read CNN news",
+            "href": ""
+        }],
+        "courses": [{
+            "name": "Critical Reasoning for Beginners",
+            "href": "",
+            "source": "Udacity"
+        }, {
+            "name": "Critical Thinking: Where to Begin",
+            "href": "",
+            "source": "iTunes U"
+        }, {
+            "name": "Logic and Critical Thinking",
+            "href": "",
+            "source": "youtube"
+        }],
+        "graph": "t/101/graph"
+    }
+}

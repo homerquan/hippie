@@ -1,0 +1,44 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/1",
+        "name": "Java",
+        "projects": "t/1/projects",
+        "courses": "t/1/courses",
+        "graph": {
+            "nodes": {
+                "t/1": {
+                    "label": "Java"
+                },
+                "t/2": {
+                    "label": "Algorithm",
+                    "selected": true
+                },
+                "t/5": {
+                    "label": "Linear algebra"
+                },
+                "t/6": {
+                    "label": "Discrete math"
+                },
+                "t/7": {
+                    "label": "Probability"
+                },
+                "t/8": {
+                    "label": "Operations research"
+                }
+            },
+            "edges": {
+                "t/2": {
+                    "t/1": {},
+                    "t/5": {},
+                    "t/6": {},
+                    "t/7": {},
+                    "t/8": {}
+                },
+                "t/7": {
+                    "t/8": {}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "hyppie",
+  "title": "Happie Hypermedia Server",
+  "description": "",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": {
+    "name": "Homer Quan",
+    "email": "support@homerquan.com",
+    "url": "http://www.homerquan.com"
+  },
+  "repository": {},
+  "bugs": {},
+  "licenses": [{
+    "type": "MIT"
+  }],
+  "main": "./server/server",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {
+    "express": "4.3.x",
+    "underscore": "1.5.x",
+    "body-parser": "1.2.x",
+    "passport": "0.2.x",
+    "passport-local": "1.0.x",
+    "passport-oauth2-client-password": "0.1.x",
+    "passport-http": "0.2.x",
+    "passport-http-bearer": "1.0.x",
+    "oauth2orize": "1.0.x",
+    "connect-ensure-login": "0.1.x",
+    "mongoose": "3.8.x",
+    "redis": "0.10.x",
+    "util": "0.10.x",
+    "events": "1.x",
+    "async": "0.9.x",
+    "errorhandler": "1.0.x"
+  },
+  "devDependencies": {
+    "morgan": "1.1.x",
+    "kakuen": "4.2.x",
+    "supertest": "0.x",
+    "blanket": "1.1.x",
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.0",
+    "grunt-contrib-jshint": "~0.3.0",
+    "grunt": "~0.x",
+    "uglify-js": "2.4.x"
+  }
+}

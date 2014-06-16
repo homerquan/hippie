@@ -1,0 +1,60 @@
+{
+    "meta": {},
+    "data": {
+        "projects": [{
+            "title": "Taste and Consumers’ Demand for Music",
+            "description": "New features of online music stores, as well as stand-alone products and services, are designed to help users share their taste in music and satisfy the inherent desire that music fans have to share their favorite music",
+            "sponsor": "Toldman sachs",
+            "id": "p/101"
+        }, {
+            "title": "Mean Reversion and profitability through cointegration of financial assets",
+            "description": "Isolating stable linear combinations of variables of multivariate time series is a fundamental problem in econometrics.",
+            "sponsor": "Titzen Bank",
+            "id": "p/102"
+        }, {
+            "title": "Is Cultural Diversity Taking Place in International Trade in Arts?",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non magna massa. Nunc blandit magna justo. Proin id pharetra mauris.",
+            "id": "p/101"
+        }, {
+            "title": "The Role of Altruism in Wellbeing",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non magna massa. Nunc blandit magna justo. Proin id pharetra mauris.",
+            "id": "p/101"
+        }, {
+            "title": "Should Vermont Towns Use Facebook? Two Towns' Approaches",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non magna massa. Nunc blandit magna justo. Proin id pharetra mauris.",
+            "id": "p/101"
+        }],
+        "@KAKUEN_COLLECTION(people)(5)": {
+            "name": {
+                "@KAKUEN_TYPE": "name",
+                "@KAKUEN_PARAM": {}
+            },
+            "id": "u/1",
+            "title": {
+                "@KAKUEN_TYPE": "sentence",
+                "@KAKUEN_PARAM": {
+                    "words": 3
+                }
+            },
+            "avatar": {
+                "@KAKUEN_TYPE": "avatar",
+                "@KAKUEN_PARAM": {
+                    "size": 50
+                }
+            }
+        },
+        "topics": [{
+            "name": "Statistics",
+            "description": "Statistics is the study of the collection, organization, analysis, interpretation and presentation of data.",
+            "id": "t/1"
+        }, {
+            "name": "Microeconomics",
+            "description": " a branch of economics that studies the behavior of individuals and small impacting players in making decisions on the allocation of limited resources",
+            "id": "t/4"
+        }, {
+            "name": "Marketing",
+            "description": "the process of communicating the value of a product or service to customers, for the purpose of selling that product or service.",
+            "id": "t/2"
+        }]
+    }
+}

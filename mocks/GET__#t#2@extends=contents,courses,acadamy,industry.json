@@ -1,0 +1,27 @@
+{
+    "meta": {},
+    "data": {
+        "id": "t/2",
+        "name": "Algorithm",
+        "contents": [{
+            "name": "Algorithm unlocked",
+            "href": ""
+        }, {
+            "name": "The most useful Algorithms in bigdata age",
+            "href": ""
+        }, {
+            "name": "20 Classic Algorithms for all time",
+            "href": ""
+        }],
+        "courses": [{
+            "name": "Introduction of algorithms",
+            "href": "",
+            "source": "Edx"
+        }, {
+            "name": "Algorithm Design",
+            "href": "",
+            "source": "iTunes U"
+        }],
+        "graph": "t/2/graph"
+    }
+}
