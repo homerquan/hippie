@@ -1,6 +1,6 @@
 {
   "name": "hyppie",
-  "title": "Happie Hypermedia Server",
+  "title": "Hippie Hypermedia API Framework",
   "description": "",
   "version": "1.0.0",
   "homepage": "",
@@ -9,7 +9,16 @@
     "email": "support@homerquan.com",
     "url": "http://www.homerquan.com"
   },
-  "repository": {},
+  "contributors": [
+    {
+      "name": "Homer Quan",
+      "email": "support@homerquan.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homerquan/hippie.git"
+  },
   "bugs": {},
   "licenses": [{
     "type": "MIT"
