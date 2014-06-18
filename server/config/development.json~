@@ -1,0 +1,25 @@
+{
+	"PORT": 8002,
+	"ENABLE_MOCK": true,
+	"MONGODB_HOST": "localhost",
+	"MONGODB_PORT": 27017,
+	"MONGODB_DB": "hippie-demo",
+	"LOG_LEVEL": 4,
+	"ENABLE_MOCKUP": true,
+	"PUBLIC_ENDPOINTS": {
+		"GET": {
+			"/suggestion": true
+		},
+		"POST": {
+			"/user/status": true
+		},
+		"PUT": {},
+		"DELETE": {}
+	},
+	"SKIP_AUTH": false,
+	"DUMP_ERROR_TO_CLIENT": true,
+	"AUTH_HOST": "localhost",
+	"AUTH_PORT": 8003,
+	"OAUTH_CLIENT_ID": "trustedClient",
+	"OAUTH_CLIENT_SECRET": "ssh-otherpassword"
+}
