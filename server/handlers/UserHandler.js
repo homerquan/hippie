@@ -36,7 +36,7 @@ var UserHandler = function(ctx) {
 		var that = this;
 		this.connector.getUserById(context.req.user, function(err, data) {
 			// never send sensitive data, e.g.,password to client!
-			if ('password' in data) {
+			if (data && 'password' in data) {
 				delete data.password;
 			}
 			that.send(context, err, data);
