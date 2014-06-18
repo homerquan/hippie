@@ -39,7 +39,6 @@ db.once('open', function callback() {
 	log.info("mongodb connected.");
 });
 
-
 exports.all = {
 	config: config,
 	util: util,

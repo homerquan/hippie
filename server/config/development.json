@@ -8,13 +8,16 @@
 	"ENABLE_MOCKUP": true,
 	"PUBLIC_ENDPOINTS": {
 		"GET": {
+			"/suggestion": true
+		},
+		"POST": {
 			"/user/status": true
 		},
-		"POST": {},
 		"PUT": {},
 		"DELETE": {}
 	},
 	"SKIP_AUTH": false,
+	"DUMP_ERROR_TO_CLIENT": true,
 	"AUTH_HOST": "localhost",
 	"AUTH_PORT": 8003,
 	"OAUTH_CLIENT_ID": "trustedClient",

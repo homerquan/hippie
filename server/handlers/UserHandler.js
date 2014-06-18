@@ -22,7 +22,7 @@ var UserHandler = function(ctx) {
 		var method = ctx.getMethod();
 		switch (step) {
 			case '':
-				this[method]();
+				this[method](context);
 				break;
 			case 'status':
 				new UserStatusHandler(ctx).dispatch();
@@ -32,9 +32,14 @@ var UserHandler = function(ctx) {
 		}
 	};
 
-	this.get = function() {
-		this.connector.getUserById(1, function(err, data) {
-			context.res.json(200, data);
+	this.get = function(context) {
+		var that = this;
+		this.connector.getUserById(context.req.user, function(err, data) {
+			// never send sensitive data, e.g.,password to client!
+			if ('password' in data) {
+				delete data.password;
+			}
+			that.send(context, err, data);
 		});
 	};
 

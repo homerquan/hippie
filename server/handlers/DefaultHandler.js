@@ -4,7 +4,7 @@ var $ = require('../lib/dollar').$,
 
 // inherit
 function DefaultHandler(ctx) {
-
+	$('util').inherits(this, DefaultHandler);
 	BaseHandler.call(this, ctx);
 
 	var context = ctx.getContext();
@@ -20,8 +20,6 @@ function DefaultHandler(ctx) {
 	}
 
 }
-
-$('util').inherits(BaseHandler, DefaultHandler);
 
 
 module.exports = DefaultHandler;

@@ -8,6 +8,7 @@ var userSchema = $('mg').Schema({
 		type: String,
 		index: true
 	},
+	email: String,
 	password: String,
 	name: String,
 	image: String

@@ -35,4 +35,4 @@ if ('development' == server.get('env')) {
 }
 
 server.listen($('config').PORT);
-console.log('Please go to http://localhost:' + $('config').PORT + ' to run hippie');
+console.log('Please go to http://localhost:' + $('config').PORT + ' to run Whitetiger BE');

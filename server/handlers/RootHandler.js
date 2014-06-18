@@ -5,7 +5,7 @@ var $ = require('../lib/dollar').$,
 
 // inherit
 function RootHandler(ctx) {
-
+	$('util').inherits(this, BaseHandler);
 	BaseHandler.call(this, ctx);
 
 	var context = ctx.getContext();
@@ -25,8 +25,6 @@ function RootHandler(ctx) {
 	};
 
 };
-
-$('util').inherits(RootHandler, BaseHandler);
 
 
 
