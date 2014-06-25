@@ -1,3 +1,4 @@
+![alt tag](http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Peace_sign.svg/330px-Peace_sign.svg.png)
 hippie
 ======
 
