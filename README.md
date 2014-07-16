@@ -12,5 +12,5 @@ Features:
     * Paged collection
   * Linkes factor: dereferenceable uri
   * Context(schema) to UI render template
-  * Custom meta data
+  * Generate route automatically
   * OAuth2 (Password, Authorization code flow), support client specifed scope
