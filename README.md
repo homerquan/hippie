@@ -4,7 +4,10 @@ hippie
 
 a hypermedia api framework
 
-Features: 
+##Goal
+  * Create a auto routing api to use with spinel (auto feature discovery). A good example is this question from stockoverflow: http://stackoverflow.com/questions/11650426/working-with-a-hypermedia-rest-api-in-backbone/11652795#11652795
+
+##Features
 
   * Generic domain style
     * Item
