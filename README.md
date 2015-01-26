@@ -30,6 +30,4 @@ A hypermedia api framework
 ##License
   MIT
 ##Copyright
-  Homer Quan
-  support@homerquan.com"
-  www.homerquan.com
+  Homer Quan (support@homerquan.com)
