@@ -1,10 +1,18 @@
+/**
+ *
+ * The default handler for not found route
+ * - In production, this shows not found error
+ * - In development, this shows mockup from kakuen
+ *
+ **/
+
 var $ = require('../lib/dollar').$,
 	BaseHandler = require('./BaseHandler'),
 	kakuen = require('kakuen');
 
-// inherit
+
 function DefaultHandler(ctx) {
-	$('util').inherits(this, DefaultHandler);
+	$('util').inherits(this, BaseHandler);
 	BaseHandler.call(this, ctx);
 
 	var context = ctx.getContext();
@@ -14,12 +22,12 @@ function DefaultHandler(ctx) {
 			kakuen.mocker(context.req, context.res, null);
 		};
 	} else {
+		var that = this;
 		this.dispatch = function() {
-			context.res.json($('errors')["ERR_NOT_FOUND"]);
+			that.send(context, $('errors')["ERR_NOT_FOUND"]);
 		};
 	}
 
 }
-
 
 module.exports = DefaultHandler;

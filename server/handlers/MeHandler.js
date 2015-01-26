@@ -1,9 +1,8 @@
 /**
  *
- * User handler
+ * User's own profile handler
  *
  **/
-
 
 var $ = require('../lib/dollar').$,
 	BaseHandler = require('./BaseHandler'),
@@ -12,12 +11,13 @@ var $ = require('../lib/dollar').$,
 	User = require('../models/User');
 
 
-var UserHandler = function(ctx) {
+var MeHandler = function(ctx) {
 
 	// inherit base
 	$('util').inherits(this, BaseHandler);
 	BaseHandler.call(this, ctx);
 
+	//put common staff such as monitor or log here
 	this.dispatch = function() {
 		// get the current step and change ctx for the next handler
 		var step = ctx.shift();
@@ -26,9 +26,6 @@ var UserHandler = function(ctx) {
 			case '':
 				this[method](ctx.getContext());
 				break;
-			case 'status':
-				new UserStatusHandler(ctx).dispatch();
-				break;
 			default:
 				new DefaultHandler(ctx).dispatch();
 		}
@@ -36,28 +33,22 @@ var UserHandler = function(ctx) {
 
 	this.get = function(context) {
 		var that = this;
-		if (!context.params.user) {
-			that.send(context, $('errors')["ERR_MISSING_FIELD"]);
-		} else {
-			User.findById(context.params.user, function(err, data) {
+		var id = context.req.user;
+		User.findById(id)
+			.populate({
+				path: 'profile',
+				select: '-_id',
+			})
+			.exec(function(err, data) {
 				// never send sensitive data, e.g.,password to client!
 				if (data && 'password' in data) {
 					delete data.password;
 				}
 				that.send(context, err, data);
 			});
-		}
-	};
-
-	this.post = function(context) {
-		var that = this;
-		var user = new User(context.req.body);
-		user.save(function(err, data) {
-			that.send(context, err, data);
-		});
 	};
 
 };
 
 
-module.exports = UserHandler;
+module.exports = MeHandler;

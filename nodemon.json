@@ -1,0 +1,9 @@
+{
+	"verbose": true,
+	"ignore": [
+		"docs/**",
+		"reports/**",
+		"bower_components/**",
+		"node_modules/**"
+	]
+}

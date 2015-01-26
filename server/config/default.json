@@ -1,4 +1,66 @@
 {
-	"PORT": 80,
-	"LOG_LEVEL": 3
+	"PORT": 8002,
+	"MONGODB_HOST": "localhost",
+	"MONGODB_PORT": 27017,
+	"MONGODB_DB": "wt",
+	"AUTH_HOST": "localhost",
+	"AUTH_PORT": 8003,
+	"SEARCH_HOST": "localhost",
+	"SEARCH_PORT": 9200,
+	"LOG_LEVEL": 4,
+	"ENABLE_MOCKUP": true,
+	"DEFAULT_REPLY_EMAIL": "noreply@reflen.com",
+	"LOGIN_TOKEN_EXPIRE": "24h",
+	"VERIFICATION_EXPIRE": "24h",
+	"PUBLIC_ENDPOINTS": {
+		"GET": [
+			"^/suggestion$",
+			"^/file/"
+		],
+		"POST": [{
+				"path": "^/user/status$",
+				"query": {
+					"action": "login"
+				}
+			}, {
+				"path": "^/user/status$",
+				"query": {
+					"action": "refresh"
+				}
+			}, {
+				"path": "^/user/status$",
+				"query": {
+					"action": "reset_password"
+				}
+			}, {
+				"path": "^/user/status$",
+				"query": {
+					"action": "check_vtoken"
+				}
+			}, {
+				"path": "^/user/status$",
+				"query": {
+					"action": "update_password"
+				}
+			},
+			"^/user$"
+		],
+		"PUT": [],
+		"DELETE": []
+	},
+	"FE_PROTOCOL": "http",
+	"FE_HOSTNAME": "www.reflen.com",
+	"FE_VERIFY_EMAIL_PATH": "verify-email",
+	"FE_RESET_PASS_PATH": "reset-password",
+	"VERIFY_TOKEN_SIZE": 64,
+	"SKIP_AUTH": false,
+	"DUMP_ERROR_TO_CLIENT": true,
+	"OAUTH_CLIENT_ID": "trustedClient",
+	"OAUTH_CLIENT_SECRET": "ssh-otherpassword",
+	"EMBEDLY_API_KEY": "325d26b56233480e99d80072a511c8cd",
+	"EMBEDLY_HOST": "api.embed.ly",
+	"EMBEDLY_PATH": "/1/extract",
+	"CLOUDINARY_CLOUD_NAME": "reflen-inc",
+	"CLOUDINARY_API_KEY": "671727529562211",
+	"CLOUDINARY_API_SECRET": "QqFZJS60mK2vqsxOcHw9szgOl8M"
 }

@@ -1,52 +1,57 @@
  {
    "ERR_OK": {
-     "status": 0,
+     "code": 0,
      "error": "No error",
      "message": ""
    },
    "ERR_GENERAL": {
-     "status": 1,
+     "code": 1,
      "error": "Something wrong in server",
      "message": ""
    },
    "ERR_NOT_FOUND": {
-     "status": 2,
+     "code": 2,
      "error": "Not found",
      "message": ""
    },
    "ERR_SET_FAILED": {
-     "status": 3,
+     "code": 3,
      "error": "Write error",
      "message": ""
    },
-   "ERR_INCORRECT_PASSWORD": {
-     "status": 4,
-     "error": "Password incorrect",
+   "ERR_INCORRECT_LOGIN": {
+     "code": 4,
+     "error": "Username or Password incorrect",
      "message": ""
    },
    "ERR_EXISTS": {
-     "status": 5,
+     "code": 5,
      "error": "The record already exists",
      "message": ""
    },
    "ERR_MISSING_FIELD": {
-     "status": 6,
+     "code": 6,
      "error": "Filed(s) missing",
      "message": ""
    },
-   "ERR_MISMATCH_FIELD": {
-     "status": 7,
-     "error": "Field type not match",
+   "ERR_NO_METHOD": {
+     "code": 7,
+     "error": "Method Not Allowed",
      "message": ""
    },
    "ERR_CONNECTION": {
-     "status": 8,
+     "code": 8,
      "error": "Connection error",
      "message": ""
    },
    "ERR_UPLOAD_FAILED": {
-     "status": 9,
+     "code": 9,
      "error": "Upload error",
+     "message": ""
+   },
+   "ERR_INVALIDE_DATA": {
+     "code": 10,
+     "error": "Invalide data",
      "message": ""
    }
  }

@@ -1,0 +1,15 @@
+{
+	"meta": {
+		"offset": 0,
+		"limit": 10
+	},
+	"data": [{
+		"id": "institution/dartmouth_collage",
+		"name": "Dartmouth Collage",
+		"category": "University"
+	}, {
+		"id": "institution/dell",
+		"name": "Dell Inc.",
+		"category": "Company"
+	}]
+}

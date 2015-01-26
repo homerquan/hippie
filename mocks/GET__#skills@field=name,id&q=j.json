@@ -1,0 +1,19 @@
+{
+	"meta": {
+		"offset": 0,
+		"limit": 10
+	},
+	"data": [{
+		"id": "skill/javascript",
+		"name": "Javascript",
+		"category": "programming-language"
+	}, {
+		"id": "skill/java",
+		"name": "Java",
+		"category": "programming-language"
+	}, {
+		"id": "skill/json-ld",
+		"name": "JSON-LD",
+		"category": "data-format"
+	}]
+}

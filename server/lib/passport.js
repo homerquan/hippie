@@ -1,12 +1,12 @@
 var passport = require('passport'),
 	BearerStrategy = require('passport-http-bearer').Strategy,
-	TokenConnector = require('../connectors/TokenConnector');
-
-var connector = new TokenConnector();
+	Token = require('../models/Token');
 
 passport.use(new BearerStrategy(
 	function(accessToken, cb) {
-		connector.getToken(accessToken, function(err, data) {
+		Token.findOne({
+			token: accessToken
+		}, function(err, data) {
 			if (err) {
 				return cb(err);
 			}

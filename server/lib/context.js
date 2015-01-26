@@ -1,4 +1,9 @@
-// route context 
+/**
+ *
+ * Route context include req, res, restful path, and parsed params
+ *
+ **/
+
 var $ = require('./dollar').$;
 
 var Context = function(req, res) {
@@ -10,13 +15,14 @@ var Context = function(req, res) {
     tokens: []
   };
 
-  //TODO: improve
+  // Resource name has to start with a char
   var resGuide = function(str) {
     return /^[A-Za-z]\w*$/.test(str);
   };
-  //TODO: improve
+
+  // resource value/id has to be a mongo objectid
   var valGuide = function(str) {
-    return /^\d[\d,]*$/.test(str);
+    return $('validator').isMongoId(str);
   };
 
   var parse = function(url) {
