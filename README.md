@@ -25,4 +25,4 @@ A hypermedia api framework
   * Context(schema) to UI render template
   * Generate route automatically
   * Hypermedia id e.g., user: "/user/123" can dereference by "?extent=user"
-  * OAuth2 (Password, Authorization code flow), support client specifed scope
+  * OAuth2 Auth (Password, Authorization code flow), support client specifed scope <https://github.com/homerquan/hippie-authorization>
