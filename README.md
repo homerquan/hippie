@@ -14,7 +14,7 @@ A hypermedia api framework
  * Hypermedia id defrefence plugin for mongoose (will be a seperate project)
 
 ##Goal
-  * Create an auto routing api to use with spinel (auto feature discovery). A good example is this question from stockoverflow: http://stackoverflow.com/questions/11650426/working-with-a-hypermedia-rest-api-in-backbone/11652795#11652795
+  * Create an hypermedia API platform to easy consume linked data. A good example is this question from stockoverflow: http://stackoverflow.com/questions/11650426/working-with-a-hypermedia-rest-api-in-backbone/11652795#11652795
 
 ##Features
   * Generic domain style
@@ -26,3 +26,8 @@ A hypermedia api framework
   * Generate route automatically
   * Hypermedia id e.g., user: "/user/123" can dereference by "?extent=user"
   * OAuth2 (Password, Authorization code flow), support client specifed scope. Provided by <https://github.com/homerquan/hippie-authorization>
+
+##License
+  MIT
+##Copyright
+  * Homer Quan
