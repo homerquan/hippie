@@ -1,13 +1,1 @@
-{
-	"PORT": 8002,
-	"MONGODB_HOST": "10.0.1.100",
-	"MONGODB_PORT": 27017,
-	"MONGODB_DB": "wt",
-	"SEARCH_HOST": "10.0.1.100",
-	"SEARCH_PORT": 9200,
-	"ENABLE_MOCKUP": true,
-	"SKIP_AUTH": false,
-	"DUMP_ERROR_TO_CLIENT": true,
-	"AUTH_HOST": "localhost",
-	"AUTH_PORT": 8003
-}
+{}
