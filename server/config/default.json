@@ -1,5 +1,5 @@
 {
-	"PORT": 8002,
+	"PORT": 8102,
 	"MONGODB_HOST": "localhost",
 	"MONGODB_PORT": 27017,
 	"MONGODB_DB": "hippe",

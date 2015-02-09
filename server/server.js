@@ -52,4 +52,4 @@ if ('development' === server.get('env')) {
 
 server.listen($('config').PORT);
 module.exports = server;
-console.log('Please go to http(s)://localhost:' + $('config').PORT + ' to run Lattix BE');
+console.log('Please go to http(s)://localhost:' + $('config').PORT + ' to run hippe');
