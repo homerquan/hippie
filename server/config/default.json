@@ -1,7 +1,7 @@
 {
-	"PORT": 8002,
+	"PORT": 8102,
 	"MONGODB_HOST": "localhost",
-	"MONGODB_PORT": 27017,
+	"MONGODB_PORT": 27018,
 	"MONGODB_DB": "hippe",
 	"AUTH_HOST": "localhost",
 	"AUTH_PORT": 8003,
