@@ -1,54 +1,78 @@
-![alt tag](http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Peace_sign.svg/330px-Peace_sign.svg.png)
-hippie version 2.0
-======
+# Hippie 3.0
 
+A modern mock + hypermedia API server with streaming (Socket.IO) and MCP support.
 
-A hypermedia api framework
+## Highlights
+- File-based HTTP mocks (legacy `mocks/GET__#path@q=value.json` and new `mocks/get/path.json` styles)
+- Socket.IO streaming mocks (`/stream` namespace)
+- MCP stdio server backed by mock tool definitions
+- Handy admin endpoints (`/health`, `/__mocks`)
 
-##Changes
- * Add basic register, login API
- * Add email verification, find lost password API
- * Provide email templates
+## Quick Start
+```bash
+npm install
+npm run dev
+```
 
-##In progress
- * Hypermedia id defrefence plugin for mongoose (will be a seperate project)
+Server runs at `http://localhost:3000` by default.
 
-##Goal
-  * Create an hypermedia API platform to easy consume linked data. A good example is this question from stockoverflow: http://stackoverflow.com/questions/11650426/working-with-a-hypermedia-rest-api-in-backbone/11652795#11652795
+## Tests
+```bash
+npm test
+npm run test:coverage
+```
 
-##Features
-  * Generic domain style
-    * Item
-    * Collection
-    * Paged collection
-  * Linkes factor: dereferenceable uri
-  * Context(schema) to UI render template
-  * Generate route automatically
-  * Hypermedia id e.g., user: "/user/123" can dereference by "?extent=user"
-  * OAuth2 (Password, Authorization code flow), support client specifed scope. Provided by <https://github.com/homerquan/hippie-authorization>
+## HTTP Mocking
+Place JSON files in `mocks/` and the server will resolve requests to the matching mock file.
 
-## Author
-  * Homer Quan (homerquan@gmail.com)
+Supported filename styles:
+- Legacy: `GET__#book@id=123.json` maps to `GET /book?id=123`
+- Legacy path segments: `GET__#t#101.json` maps to `GET /t/101`
+- Modern: `mocks/get/book.json` maps to `GET /book`
+- Fallback: `mocks/_fallback.json`
+
+### Mock Metadata
+Wrap metadata in `__meta` to control status, headers, or delay.
+```json
+{
+  "__meta": {
+    "status": 201,
+    "delayMs": 250,
+    "headers": {
+      "x-mock": "true"
+    }
+  },
+  "id": 123,
+  "message": "created"
+}
+```
+
+## Streaming (Socket.IO)
+Connect to the `/stream` namespace. Use `subscribe` with a topic matching a file in `mocks/streams`.
+
+Example client flow:
+- Emit `subscribe` with `{ "topic": "heartbeat" }`
+- Receive `event` payloads defined in `mocks/streams/heartbeat.json`
+
+To allow publishing from clients or HTTP:
+```bash
+ALLOW_STREAM_PUBLISH=1 npm run dev
+```
+
+## MCP (Model Context Protocol)
+Run the MCP server over stdio:
+```bash
+npm run mcp
+```
+
+- Tool definitions live in `mocks/mcp/tools/*.json`
+- Tool responses live in `mocks/mcp/responses/<tool>.json`
+
+## Admin Endpoints
+- `GET /health`
+- `GET /__mocks`
+- `GET /__openapi`
+- `POST /__stream/:topic` (requires `ALLOW_STREAM_PUBLISH=1`)
 
 ## License
 The MIT license.
-
-Copyright (c) 2013-2015 Homer Quan (http://www.homerquan.com)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
-of the Software, and to permit persons to whom the Software is furnished to do
-so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.

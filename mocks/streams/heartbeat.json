@@ -1,0 +1,18 @@
+[
+  {
+    "event": "heartbeat",
+    "delayMs": 0,
+    "data": {
+      "status": "ok",
+      "message": "stream connected"
+    }
+  },
+  {
+    "event": "heartbeat",
+    "delayMs": 1000,
+    "data": {
+      "status": "ok",
+      "message": "still alive"
+    }
+  }
+]

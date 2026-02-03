@@ -1,86 +1,51 @@
 {
   "name": "hippie",
   "title": "Hippie Hypermedia Server",
-  "description": "",
-  "version": "2.0.0",
+  "description": "Modern mock + hypermedia API server with streaming and MCP support",
+  "version": "3.0.0",
   "homepage": "",
   "author": {
     "name": "Homer Quan",
     "email": "support@homerquan.com",
     "url": "http://www.homerquan.com"
   },
-  "contributors": [{
-    "name": "Homer Quan",
-    "email": "support@homerquan.com"
-  }],
+  "contributors": [
+    {
+      "name": "Homer Quan",
+      "email": "support@homerquan.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/homerquan/hippie.git"
   },
-  "bugs": {},
-  "licenses": [{
-    "type": "MIT"
-  }],
-  "main": "./server/server",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "main": "./server/server.js",
   "engines": {
-    "node": "0.10.x",
-    "npm": "2.x"
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "mcp": "node server/mcp-stdio.mjs",
+    "test": "node --test",
+    "test:coverage": "node --test --coverage"
   },
   "dependencies": {
-    "async": "^0.9.0",
-    "bcrypt": "^0.7.8",
-    "body-parser": "~1.10.1",
-    "cloudinary": "~1.1.1",
-    "connect-ensure-login": "~0.1.x",
-    "email-templates": "~1.1.2",
-    "errorhandler": "~1.3.2",
-    "express": "~4.10.7",
-    "express-validator": "^2.8.0",
-    "gridfs-stream": "~0.5.3",
-    "grunt-mocha": "^0.4.11",
-    "jade": "~1.9.0",
-    "jquery-file-upload-gridfs-middleware": "^0.1.1",
-    "jquery-file-upload-middleware": "~0.1.7",
-    "jsonld": "^0.2.17",
-    "kakuen": "~4.2.x",
-    "mongodb": "~1.4.28",
-    "mongoose": "~3.8.x",
-    "mongoose-html": "~0.0.1",
-    "mongoose-paginate": "~3.1.3",
-    "mongoose-permalink": "~1.0.5",
-    "multiparty": "~4.1.0",
-    "nodemailer": "~1.3.0",
-    "nodemailer-sendmail-transport": "~1.0.0",
-    "oauth2orize": "~1.0.x",
-    "passport": "~0.2.x",
-    "passport-http": "~0.2.x",
-    "passport-http-bearer": "~1.0.x",
-    "passport-local": "~1.0.x",
-    "passport-oauth2-client-password": "~0.1.x",
-    "promise": "^6.0.1",
-    "redis": "^0.10.3",
-    "sanitize-html": "~1.5.1",
-    "underscore": "~1.7.0",
-    "winston": "^0.8.3",
-    "node-uuid": "~1.4.2",
-    "base64url": "~1.0.4",
-    "speakingurl": "~0.20.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
-    "blanket": "1.1.x",
-    "grunt": "~0.4.5",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-docco2": "^0.2.0",
-    "grunt-npm-install": "~0.1.0",
-    "grunt-shell": "^0.7.0",
-    "grunt-version": "~0.3.0",
-    "load-grunt-tasks": "~0.6.0",
-    "memwatch": "^0.2.2",
-    "mocha": "^1.20.1",
-    "morgan": "^1.3.2",
-    "supertest": "^0.13.0",
-    "uglify-js": "~2.4.14",
-    "debug": "~2.1.0"
+    "nodemon": "^3.1.0",
+    "socket.io-client": "^4.7.5",
+    "supertest": "^6.3.4"
   }
 }
