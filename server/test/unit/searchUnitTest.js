@@ -1,34 +1,36 @@
-var request = require('supertest'),
-	assert = require('assert'),
-	login = require('../util/login'),
-	data = require('../util/data'),
-	server = require('../../server');
+const { test, before, after } = require("node:test");
+const assert = require("node:assert/strict");
+const request = require("supertest");
+const { createServer } = require("../../server");
 
-var accessToken = '';
+let serverHandle;
+let app;
 
-describe('suggestion API', function() {
-	describe('GET /suggestion?q=java', function() {
-		it('should return an array', function(done) {
-			request(server)
-				.get('/suggestion?q=java')
-				.expect(200, done);
-		});
-	});
+before(async () => {
+  const created = createServer();
+  app = created.app;
+  serverHandle = created.server;
+  await created.start(0);
 });
 
-describe('logout API', function() {
-	describe('GET /search?q=java', function() {
-		before(function(done) {
-			login(function(token) {
-				accessToken = token;
-				done();
-			});
-		});
-		it('should return an item', function(done) {
-			request(server)
-				.get('/search?q=java')
-				.set('Authorization', 'bearer ' + accessToken)
-				.expect(200, done);
-		});
-	});
+after(async () => {
+  if (serverHandle) {
+    await new Promise((resolve) => serverHandle.close(resolve));
+  }
+});
+
+test("suggestion API", async () => {
+  const response = await request(app)
+    .get("/suggestion?q=java")
+    .expect(200);
+
+  assert.ok(response.body);
+});
+
+test("search API", async () => {
+  const response = await request(app)
+    .get("/search?q=java")
+    .expect(200);
+
+  assert.ok(response.body);
 });

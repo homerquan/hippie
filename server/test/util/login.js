@@ -1,22 +1,17 @@
-var request = require('supertest'),
-	data = require('./data'),
-	server = require('../../server');
+const request = require("supertest");
+const data = require("./data");
 
-var login = function(cb) {
-	request(server)
-		.post('/user/status?action=login')
-		.send({
-			username: data.USERNAME,
-			password: data.PASSWORD,
-			remember: false
-		})
-		.set('Accept', 'application/json')
-		.end(function(err, res) {
-			if (err)
-				cb(null);
-			else
-				cb(res.body['access_token']);
-		});
-};
+async function login(app) {
+  const response = await request(app)
+    .post("/user/status?action=login")
+    .send({
+      username: data.USERNAME,
+      password: data.PASSWORD,
+      remember: false
+    })
+    .set("Accept", "application/json");
 
-module.exports = login;
+  return response.body?.access_token || response.body?.sessionId || null;
+}
+
+module.exports = { login };

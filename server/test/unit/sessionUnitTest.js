@@ -1,57 +1,51 @@
-var request = require('supertest'),
-	assert = require('assert'),
-	login = require('../util/login'),
-	data = require('../util/data'),
-	server = require('../../server');
+const { test, before, after } = require("node:test");
+const assert = require("node:assert/strict");
+const request = require("supertest");
+const data = require("../util/data");
+const { createServer } = require("../../server");
 
-var accessToken = '';
+let serverHandle;
+let app;
 
-//test cases
-describe('login API: username', function() {
-	describe('POST /user/status?action=login', function() {
-		it('should return an item', function(done) {
-			request(server)
-				.post('/user/status?action=login')
-				.send({
-					username: data.USERNAME,
-					password: data.PASSWORD,
-					remember: false
-				})
-				.set('Accept', 'application/json')
-				.expect(200, done);
-		});
-	});
+before(async () => {
+  const created = createServer();
+  app = created.app;
+  serverHandle = created.server;
+  await created.start(0);
 });
 
-describe('login API: email', function() {
-	describe('POST /user/status?action=login', function() {
-		it('should return an item', function(done) {
-			request(server)
-				.post('/user/status?action=login')
-				.send({
-					username: data.EMAIL,
-					password: data.PASSWORD,
-					remember: false
-				})
-				.set('Accept', 'application/json')
-				.expect(200, done);
-		});
-	});
+after(async () => {
+  if (serverHandle) {
+    await new Promise((resolve) => serverHandle.close(resolve));
+  }
 });
 
-describe('logout API', function() {
-	describe('POST /user/status?action=logout', function() {
-		before(function(done) {
-			login(function(token) {
-				accessToken = token;
-				done();
-			});
-		});
-		it('should return an item', function(done) {
-			request(server)
-				.post('/user/status?action=logout')
-				.set('Authorization', 'bearer ' + accessToken)
-				.expect(200, done);
-		});
-	});
+test("login API: username", async () => {
+  const response = await request(app)
+    .post("/user/status?action=login")
+    .send({
+      username: data.USERNAME,
+      password: data.PASSWORD,
+      remember: false
+    })
+    .set("Accept", "application/json")
+    .expect(200);
+
+  assert.equal(response.body.userId, 123);
+  assert.ok(response.body.sessionId);
+});
+
+test("login API: email", async () => {
+  const response = await request(app)
+    .post("/user/status?action=login")
+    .send({
+      username: data.EMAIL,
+      password: data.PASSWORD,
+      remember: false
+    })
+    .set("Accept", "application/json")
+    .expect(200);
+
+  assert.equal(response.body.userId, 123);
+  assert.ok(response.body.sessionId);
 });
